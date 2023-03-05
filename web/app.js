@@ -1,4 +1,5 @@
 const express = require('express')
+
 const rateLimitMiddleware = require('./middleware/rateLimit')
 
 const app = express()
@@ -19,8 +20,10 @@ app.use((err, req, res, next) => {
 	})
 })
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
 	console.log('app is running')
 })
+
+require('./websocket')(server)
 
 module.exports = app

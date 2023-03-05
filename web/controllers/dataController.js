@@ -1,5 +1,6 @@
 const externalApi = require('../utils/externalApi')
 
+
 const dataContoller = {
     getData: async(req, res, next) => {
 
